@@ -52,7 +52,6 @@ export default function App() {
               <View style={post.current_photo}></View>
               <View style={post.dot}></View>
             </View>
-
           </View>
           <View style={post.post}>
             <Image
@@ -66,11 +65,19 @@ export default function App() {
               <View style={post.dot}></View>
               <View style={post.current_photo}></View>
             </View>
-
           </View>
         </ScrollView>
       </View>
-      
+      <View style={share.share}>
+        <View style={share.icon}>
+          <MaterialIcons name="favorite" size={24} color="red" />
+          <FontAwesome5 name="comment" size={24} color="black"  />
+          <FontAwesome5 name="telegram-plane" size={24} color="black" />
+        </View>
+        <View>
+          <FontAwesome name="bookmark-o" size={24} color="black" />
+        </View>
+      </View>
     </View>
   );
 }
@@ -152,7 +159,6 @@ const post = StyleSheet.create({
   posts: {
     width: 380,
     height: 500,
-    
   },
   post: {
     position: "relative",
@@ -172,13 +178,13 @@ const post = StyleSheet.create({
     paddingVertical: 2,
     opacity: 0.9,
   },
-  number:{
+  number: {
     color: "white",
     fontSize: 12,
     fontWeight: "semibold",
   },
-  dots:{
-zIndex: 1,
+  dots: {
+    zIndex: 1,
     position: "absolute",
     display: "flex",
     flexDirection: "row",
@@ -188,19 +194,33 @@ zIndex: 1,
     width: "100%",
     left: 20,
   },
-  dot:{
+  dot: {
     width: 8,
     height: 8,
     backgroundColor: "white",
     borderRadius: 50,
     margin: 5,
   },
-  current_photo:{
+  current_photo: {
     width: 8,
     height: 8,
     backgroundColor: "#0a88d1",
     borderRadius: 50,
     margin: 5,
-  }
-
+  },
+});
+const share = StyleSheet.create({
+  share: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingHorizontal: 20,
+    marginTop: 10,
+  },
+  icon: {
+    display: "flex",
+    flexDirection: "row",
+    gap: 20,
+  },
 });
